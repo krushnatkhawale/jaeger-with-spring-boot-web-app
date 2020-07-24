@@ -27,7 +27,12 @@ Below picture shows how relay-service and sprint-service communicates.
 
 ##### Gradle dependencies
 
+For this tutorial following dependencies are used,
 
+```groovy
+	implementation "io.opentracing.contrib:opentracing-spring-cloud-starter:0.1.13"
+	implementation "io.jaegertracing:jaeger-client:0.31.0"
+```
 
 
 ##### Tracer configuration
