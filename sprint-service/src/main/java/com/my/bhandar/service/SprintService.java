@@ -1,6 +1,8 @@
 package com.my.bhandar.service;
 
+import io.jaegertracing.internal.JaegerSpanContext;
 import io.opentracing.Span;
+import io.opentracing.SpanContext;
 import io.opentracing.Tracer;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,12 @@ public class SprintService {
         int count = index + 1;
         Span sprintSpan = tracer.buildSpan("sprint-" + count)
                 .withTag("player", player).start();
+        sprintSpan.log("test log message");
+
+        JaegerSpanContext spanContext = (JaegerSpanContext)sprintSpan.context();
+        long spanId = spanContext.getSpanId();
+        long traceId = spanContext.getTraceId();
+
 
         doSomeRunning(player);
 
