@@ -1,0 +1,5 @@
+rootProject.name = 'spring-boot-jaeger-example'
+
+include 'relay-service'
+
+include 'sprint-service'

@@ -1,0 +1,12 @@
+allprojects {
+	group 'com.my.bhandar'
+}
+
+subprojects {
+
+	repositories {
+		mavenCentral()
+	}
+
+	task listAllDependencies(type: DependencyReportTask) {}
+}
