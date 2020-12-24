@@ -20,16 +20,19 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
+    
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: krushnatkhawale/jaeger-with-spring-boot-web-app
         tags: v1, latest
-        registry: hub.docker.com
-        dockerfile: Dockerfile.ci
+        registry: docker.io
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
