@@ -33,7 +33,7 @@ jobs:
           image: krushnatkhawale/relay-service-jaeger-with-spring-boot-web-app
           tags: v1, latest
           registry: docker.io
-          dockerfile: RelayServiceDockerfile
+          dockerfile: Dockerfile-RelayService
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
@@ -43,6 +43,6 @@ jobs:
           image: krushnatkhawale/sprint-service-jaeger-with-spring-boot-web-app
           tags: v1, latest
           registry: docker.io
-          dockerfile: SprintServiceDockerfile
+          dockerfile: Dockerfile-SprintService
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
